@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <h1>Tasks</h1>
+    <div id="tasks-container"></div>
+
+    <!-- Task Detail Modal -->
+    <div id="task-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-task-title"></h2>
+            <p><strong>Description:</strong> <span id="modal-task-description"></span></p>
+            <p><strong>Assigned To:</strong> <span id="modal-task-assignee"></span></p>
+            <p><strong>Due Date:</strong> <span id="modal-task-due-date"></span></p>
+            <p><strong>Priority:</strong> <span id="modal-task-priority"></span></p>
+            <p><strong>Category:</strong> <span id="modal-task-category"></span></p>
+            <p><strong>Status:</strong> <span id="modal-task-status"></span></p>
+            
+            <h3>Comments</h3>
+            <div id="task-comments"></div>
+            <form id="add-comment-form">
+                <textarea id="comment-text" placeholder="Add a comment" required></textarea>
+                <button type="submit">Add Comment</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/supabase-config.js"></script>
+    <script src="../js/tasks.js"></script>
+</body>
+</html>

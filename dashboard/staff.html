@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Staff Panel</h2>
+        <ul>
+            <li><a href="staff.html">Dashboard</a></li>
+            <li><a href="../pages/tasks.html">Tasks</a></li>
+            <li><a href="../pages/profile.html">Profile</a></li>
+            <li><a href="#" id="notifications-link">Notifications (<span id="notification-count">0</span>)</a></li>
+            <li><button id="logout-button">Logout</button></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <h1>Staff Dashboard</h1>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/supabase-js/2.39.3/umd/supabase.min.js"></script>
+    <script type="module" src="../js/supabase-config.js"></script>
+    <script type="module" src="../js/dashboard.js"></script>
+    <script type="module" src="../js/auth.js"></script>
+    <div id="notification-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Notifications</h2>
+            <div id="notification-list"></div>
+        </div>
+    </div>
+</body>
+</html>
