@@ -1,18 +1,4 @@
 {
-  "routes": [
-    {
-      "src": "/dashboard/(.*)",
-      "dest": "/dashboard/$1"
-    },
-    {
-      "src": "/pages/(.*)",
-      "dest": "/pages/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
