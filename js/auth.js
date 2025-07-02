@@ -5,19 +5,22 @@ async function signUp(email, password, fullName, role) {
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
-    options: {
-      data: {
-        full_name: fullName,
-        role: role,
-      },
-    },
   });
   if (error) {
     console.error('Error signing up:', error.message);
     return { data, error };
   }
-  // The user is already created, and the profile data is added via options.
-  // Supabase triggers can be used to insert into a public.profiles table.
+
+  // Explicitly insert into profiles table
+  if (data.user) {
+    const { error: profileError } = await supabase.from('profiles').insert([
+      { id: data.user.id, full_name: fullName, email: email, role: role }
+    ]);
+    if (profileError) {
+      console.error('Error inserting profile:', profileError.message);
+      return { data: null, error: profileError }; // Return error if profile insertion fails
+    }
+  }
   return { data, error };
 }
 
