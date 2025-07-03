@@ -35,11 +35,12 @@ body {
     display: block;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform transition */
 }
 
 .sidebar ul li a:hover {
     background-color: #34495e; /* Slightly lighter blue on hover */
+    transform: translateX(5px); /* Slide right on hover */
 }
 
 .sidebar button {
@@ -52,11 +53,13 @@ body {
     width: 100%;
     text-align: left;
     margin-top: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Added transform and box-shadow transitions */
 }
 
 .sidebar button:hover {
     background-color: #c0392b;
+    transform: translateY(-2px); /* Subtle lift on hover */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .main-content {
